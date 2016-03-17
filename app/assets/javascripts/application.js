@@ -13,8 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require d3
+//= require datetimepicker
 //= require_tree .
 
+
+function dateTime() {
+  $("input[name='assignment[active_at]']").datetimepicker();
+  $("input[name='assignment[due_at]']").datetimepicker();
+}
 
 function disableSubmitButton() {
   $(event.target).prop("disabled", true);
@@ -49,5 +55,5 @@ function displayGrade(displayType) {
 function hideLastRow() {
   displayGrade(false);
 }
-
+$(dateTime);
 $(hideLastRow);
